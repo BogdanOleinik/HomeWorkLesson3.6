@@ -14,19 +14,19 @@ struct Animation: View {
         VStack {
             Button(action: { animation.toggle() }) {
                 VStack {
-                    Text(animation ? "Отключить" : "Включить")
-                    Spacer()
                     StarView()
                         .frame(width: 300, height: 300)
                         .offset(x: animation ? 0 : -UIScreen.main.bounds.height)
                         .animation(animation
                                    ? .interpolatingSpring(
-                                mass: 1.0,
-                                stiffness: 100,
-                                damping: 10,
-                                initialVelocity: 0)
+                                    mass: 1.0,
+                                    stiffness: 100,
+                                    damping: 10,
+                                    initialVelocity: 0)
                                    : .easeIn
                         )
+                    Spacer()
+                    Text(animation ? "Отключить" : "Включить")
                 }
             }
             
